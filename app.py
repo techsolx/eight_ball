@@ -1,3 +1,4 @@
+#This is a hash bang #!
 #!/usr/bin/env python3
 
 import random
@@ -25,7 +26,10 @@ responses = [
     "Very doubtful.",
 ]
 
-result_num = random.randint(0, 19)
+len_responses = len(responses)
+# Ways to get a random number from zero the the length of the responses list
+# rand_response = random.randint(0, len_responses - 1)
+rand_response = random.randrange(0, len_responses)
 
 
 def ask_question():
@@ -36,7 +40,9 @@ def ask_question():
         print("Please phrase your question in the form of a question - ?")
 
 
-answer = responses[result_num]
+answer = responses[rand_response]
+# Another way to get a random.choice from a list
+#answer = random.choice(responses)
 response = ask_question()
 
 if response:
